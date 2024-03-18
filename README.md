@@ -15,3 +15,4 @@
     *** 1. npm install
     *** 2. get the google json from firebase console and replace it on the android/app path
     *** 3. IOS not configured properly do it your own
+    *** 4. use node 18+ version and java 17 or later otherwise it will throw an error
