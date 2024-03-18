@@ -7,10 +7,7 @@ import 'dotenv/config';
 import clientHandler from "./src/handlers/clientHandlerRoute.js";
 import accessHandler from "./src/handlers/accessHandlerRoute.js";
 import notificationHandler from "./src/handlers/notificationHandlerRoute.js";
-import { createRecordAndAppendMessage, getAllClientIds, readMessages } from "./src/utils/dbHelper.js";
 import { knowledgeCron } from "./src/utils/knowledgeCron.js";
-import systemHandler from "./src/handlers/systemHandler.js";
-import { getOpenAICompletion } from "./src/utils/openaiHelper.js";
 
 // Express props
 const app = express();
@@ -52,23 +49,6 @@ knowledgeCron();
 app.use("/client", clientHandler);
 app.use("/auth", accessHandler);
 app.use("/notification", notificationHandler);
-app.use("/test", async (req, res) => {
-    const prompt = `Generate a new content based on the following questions "Why should i need to use JavaScript", "Sri lankan economy", "how to improve sri lankan economy using javascript".
-    Adhere to following rules while generating the new content.
-    1. Generated content should be authentic and unique
-    2. Generated content should not repeat anything covered on the given content
-    3. Generated content should be based on the given content and it should be shuffling the given content
-    4. Generated content should revolved around one area of a certain topic
-    5. Generated content should provide interesting examples
-    6. Generated content should provoke conversational content
-    7. Generate a suitable short topic for the generated content
-    8. Provide in json format and short topic should be in the title of the json object
-    9. other contents should be in the content of the json object`
-    const ress = await getOpenAICompletion(prompt);
-
-    console.log(JSON.parse(ress?.choices[0]?.message?.content)?.title);
-    res.status(200).send("Server is running");
-});
 
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`Server running on port ${process.env.SERVER_PORT}`);

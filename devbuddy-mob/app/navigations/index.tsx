@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {NavigationContainer, useNavigation} from '@react-navigation/native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import auth from '@react-native-firebase/auth';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -62,8 +62,8 @@ const RootNavigation = () => {
   const renderHeaderTitle = useCallback(() => {
     return (
       <View style={styles.title}>
-        <Label label="teach" size={30} weight="bold" />
-        <Label label="Me" size={30} weight="light" />
+        <Label label="Dev" size={30} weight="bold" />
+        <Label label="BudDy" size={30} weight="light" />
       </View>
     );
   }, []);

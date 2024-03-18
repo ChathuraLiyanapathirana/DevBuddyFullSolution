@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React, {useEffect} from 'react';
 import {notificationHistory, readNotification} from '../services/api';
 import {useAuthStore} from '../stores/auth';
@@ -9,7 +9,6 @@ import {useNavigation} from '@react-navigation/native';
 import {StackScreenProps} from '@react-navigation/stack';
 import {RootStackParamList} from '../navigations';
 
-type Props = {};
 type NotificationItem = {
   title: string;
   notification: string;

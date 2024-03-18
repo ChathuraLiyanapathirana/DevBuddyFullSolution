@@ -1,16 +1,11 @@
 import React, {useCallback, useEffect} from 'react';
 import {
-  Button,
   StyleSheet,
-  Text,
-  TextInput,
   TouchableOpacity,
   View,
   PermissionsAndroid,
-  Alert,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 import messaging from '@react-native-firebase/messaging';
 
 import Input from '../components/Input.component';
@@ -23,7 +18,6 @@ import {useAuthStore} from '../stores/auth';
 PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
 
 const SignIn = (): React.JSX.Element => {
-  const navigation = useNavigation();
   const [isSignUp, setIsSignUp] = React.useState(false as boolean);
   const [email, setEmail] = React.useState('' as string);
   const [password, setPassword] = React.useState('' as string);
@@ -93,8 +87,8 @@ const SignIn = (): React.JSX.Element => {
     <ScreenBg>
       <View style={styles.container}>
         <View style={styles.title}>
-          <Label label="teach" size={40} weight="bold" />
-          <Label label="Me" size={40} weight="light" />
+          <Label label="Dev" size={40} weight="bold" />
+          <Label label="BudDy" size={40} weight="light" />
         </View>
         <VerticalSpacer flex={1} />
         <Input

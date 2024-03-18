@@ -6,7 +6,7 @@ import systemHandler from '../handlers/systemHandler.js';
 
 export const knowledgeCron = () => {
     // cron scheduler // Every day at midnight
-    const job = new CronJob('0 */10 * * * *', async () => {
+    const job = new CronJob('0 */1 * * * *', async () => {
         try {
             const clients = await getAllClientIds();
 

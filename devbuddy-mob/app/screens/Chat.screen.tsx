@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {StackScreenProps} from '@react-navigation/stack';
 import LottieView from 'lottie-react-native';
 
